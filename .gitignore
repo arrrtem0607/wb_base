@@ -17,9 +17,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
-collect_iins.py
+sub/
 credentials.json
-excel_parcer.py
-google_parcer.py
-create_db_user.py
 *.xlsx

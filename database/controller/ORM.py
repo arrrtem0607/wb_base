@@ -8,11 +8,12 @@ import functools
 import re
 
 from utils.seller_parcer_api import SellerParserAPI
-from utils.logger import logger
+from utils.logger import setup_logger
 from database.entities.core import Database, Base
-from database.entities.models import Supplier
+from database.entities.models import MPStatSeller
 
 load_dotenv()
+logger = setup_logger(__name__)
 
 def session_manager(method):
     @functools.wraps(method)

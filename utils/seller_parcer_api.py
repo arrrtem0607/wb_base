@@ -3,8 +3,9 @@ import aiohttp
 import re
 from typing import List, Dict
 
-from utils.logger import logger
+from utils.logger import setup_logger
 
+logger = setup_logger(__name__)
 
 class SellerParserAPI:
     def __init__(self, base_url: str):
@@ -121,7 +122,7 @@ class SellerParserAPI:
         logger.info(f"✅ Загружено продавцов: {len(results)}")
         return results
 
-    async def get_all_sellers_paginated(self, date: str, max_total: int = 900000, page_size: int = 500) -> List[Dict]:
+    async def get_all_sellers_paginated(self, date: str, max_total: int = 907250, page_size: int = 5000) -> List[Dict]:
         await self.init_session()
         all_sellers = []
         offset = 0
